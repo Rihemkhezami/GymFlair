@@ -1,0 +1,76 @@
+<section id="content"
+            class="w-full p-5  transition-all duration-500 ease-in-out">
+            <!-- user summary -->
+            <div class="grid grid-cols-5">
+                <div class="bg-slate-50 p-5 m-2 rounded-md flex justify-between items-center shadow">
+                    <div>
+                        <h3 class="font-bold">Total Users</h3>
+                        <p class="text-gray-500"> {{ info.users }} </p>
+                    </div>
+                    <i class="fa-solid fa-users p-4 bg-gray-200 rounded-md"></i>
+                </div>
+
+                <div class="bg-slate-50 p-5 m-2 flex justify-between items-center shadow">
+                    <div>
+                        <h3 class="font-bold">Total Coachs</h3>
+                        <p class="text-gray-500"> {{info.coachs}} </p>
+                    </div>
+                    <i class="fa-solid fa-users p-4 bg-green-200 rounded-md"></i>
+                </div>
+
+                <div class="bg-slate-50 p-5 m-2 flex justify-between items-center shadow">
+                    <div>
+                        <h3 class="font-bold">Total Events</h3>
+                        <p class="text-gray-500"> {{info.events}} </p>
+                    </div>
+                    <i class="fa-solid fa-users p-4 bg-yellow-200 rounded-md"></i>
+                </div>
+
+                <div class="bg-slate-50 p-5 m-2 flex justify-between items-center shadow">
+                    <div>
+                        <h3 class="font-bold">Total Courses</h3>
+                        <p class="text-gray-500"> {{info.cours}}</p>
+                    </div>
+                    <i class="fa-solid fa-users p-4 bg-red-200 rounded-md"></i>
+                </div>
+                <div class="bg-slate-50 p-5 m-2 flex justify-between items-center shadow">
+                    <div>
+                        <h3 class="font-bold">Total Equipments</h3>
+                        <p class="text-gray-500"> {{info.equipments}}</p>
+                    </div>
+                    <i class="fa-solid fa-users p-4 bg-lime-200 rounded-md"></i>
+                </div>
+            </div>
+
+            
+                <!-- //user list -->
+                <div class="overflow-x-auto m-2 shadow-md">
+                    <table class="w-full">
+                        <thead class="bg-gray-100 rounded-sm">
+                            <tr>
+                                <th class="text-left">Image</th>
+                                <th class="text-left">Username</th>
+                                <th class="text-left">Email</th>
+                                <th class="text-left">Birthdate</th>
+                                <th class="text-left">Role</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr  *ngFor="let item of data">
+                                <td class="pl-2">
+                                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                                    [src]="imageUrl+item.user.photo"        
+                                    alt="">
+                                </td>
+                                <td>{{ item.user.username }} </td>
+                                <td>{{ item.user.email }}</td>
+                                <td>{{ item.user.birth+"" | date:'yyyy-MM-dd' }}</td>
+                                <td> {{ item.user.role }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+
+        </section>

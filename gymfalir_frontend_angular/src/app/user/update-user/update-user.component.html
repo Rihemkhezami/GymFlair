@@ -1,0 +1,53 @@
+<div class="flex items-center justify-center p-12 mt-10">
+    <!-- Author: FormBold Team -->
+    <div class="mx-auto w-full max-w-[700px] bg-white px-12 py-5 ">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="mb-5">
+                <label for="username" class="mb-3 block text-base font-medium text-[#07074D]">
+                    username
+                </label>
+                <input type="text" name="username" id="username" placeholder="username" [(ngModel)] = "formData.username"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                    email 
+                </label>
+                <input type="email" name="email" id="email" placeholder="email" [(ngModel)] = "formData.email"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="birth" class="mb-3 block text-base font-medium text-[#07074D]">
+                    birth
+                </label>
+                <input type="date" name="birth" id="birth" placeholder="birth" [(ngModel)] = "formData.birth"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="role" class="mb-3 block text-base font-medium text-[#07074D]">
+                    role
+                </label>
+                <select name="role" id="role" placeholder="role" [(ngModel)] = "formData.role"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" >
+                    <option *ngFor="let item of roles" [value]="item">{{ item }}</option>
+                </select>
+            </div>
+            <div class="w-full  ">
+                <div class="mb-5">
+                    <label for="image" class="mb-3 block text-base font-medium text-[#07074D]">
+                        Image
+                    </label>
+                    <input type="file" name="image" id="image" accept="image/*" (change)="onFileChange($event)"
+                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md file:text-md file:bg-transparent file:border-0 " />
+                </div>
+            </div>
+            <div>
+                <button type="submit"
+                    class="hover:shadow-form w-full rounded-md bg-slate-900 hover:bg-slate-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                    Update
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

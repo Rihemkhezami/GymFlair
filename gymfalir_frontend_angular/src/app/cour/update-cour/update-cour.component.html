@@ -1,0 +1,58 @@
+<div class="flex items-center justify-center p-12 mt-10">
+    <!-- Author: FormBold Team -->
+    <div class="mx-auto w-full max-w-[700px] bg-white px-12 py-5 ">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+            <div class="mb-5">
+                <label for="nom" class="mb-3 block text-base font-medium text-[#07074D]">
+                    nom
+                </label>
+                <input type="text" name="nom" id="nom" placeholder="nom" [(ngModel)] = "formData.nom"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="capacite" class="mb-3 block text-base font-medium text-[#07074D]">
+                    capacite 
+                </label>
+                <input type="number" name="capacite" id="capacite" placeholder="capacite" [(ngModel)] = "formData.capacite"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
+                    date
+                </label>
+                <input type="date" name="date" id="date" placeholder="date" [(ngModel)] = "formData.date"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="start" class="mb-3 block text-base font-medium text-[#07074D]">
+                    start
+                </label>
+                <input type="number" name="start" id="start" placeholder="start" [(ngModel)] = "formData.start"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="end" class="mb-3 block text-base font-medium text-[#07074D]">
+                    end
+                </label>
+                <input type="number" name="end" id="end" placeholder="end" [(ngModel)] = "formData.end"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+                <label for="coach" class="mb-3 block text-base font-medium text-[#07074D]">
+                    coach
+                </label>
+                <select name="coach" id="coach" placeholder="coach" [(ngModel)] = "formData.coach"
+                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" >
+                    <option *ngFor="let item of coachs" [value]="item._id">{{ item.firstname + " " +item.lastname }}</option>
+                </select>
+            </div>
+            
+            <div>
+                <button type="submit"
+                    class="hover:shadow-form w-full rounded-md bg-slate-900 hover:bg-slate-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                    Update
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

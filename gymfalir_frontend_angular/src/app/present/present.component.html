@@ -1,0 +1,42 @@
+<!-- component -->
+<div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
+    <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+      <thead class="bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">image</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">username</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">birth</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Email</th>
+          <th scope="col" class="px-6 py-4 font-medium text-gray-900">role</th>
+          
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+        <tr class="hover:bg-gray-50" *ngFor=" let item of data ">
+          <td class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+              <img
+                class="h-[150px] w-[200px] rounded-lg object-cover object-center"
+                [src]="imageUrl+item.user.photo"
+                alt=""
+              />
+          </td>
+          <td class="px-6 py-4">
+           {{ item.user.username }} 
+          </td>
+          <td class="px-6 py-4">{{ item.user.birth+"" | date:'yyyy-MM-dd' }}</td>
+          <td class="px-6 py-4">
+            <div class="flex gap-2">
+              {{ item.user.email }}
+            </div>
+          </td>
+          <td class="px-6 py-4">
+            <div class="flex gap-2">
+             {{ item.user.role }}
+            </div>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
